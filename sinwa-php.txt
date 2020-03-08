@@ -1,0 +1,26 @@
+https://www.php think runkancloud.cn/manual/thinkphp6_0/1037479
+
+安装 ：composer create-project topthink/think 项目目录
+
+更新： composer update topthink/framework
+
+
+#返回json
+
+    //设置数组
+    $result = [
+        "status" => 1,
+        "message"=>"ok",
+        "result"=>[
+            "id"=>1
+        ]
+    ];
+
+    //设置header信息
+
+    $header = [
+        "Token"=>'show_token'
+    ];
+
+    //返回json  
+    return json($result,500,$header);
