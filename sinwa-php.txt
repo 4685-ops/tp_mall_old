@@ -24,3 +24,21 @@ https://www.php think runkancloud.cn/manual/thinkphp6_0/1037479
 
     //返回json  
     return json($result,500,$header);
+#打印访问的所有参数
+    1.  dump($this->request->param());
+        dump($this->request->param('age', 1, "intval"));
+    2.方法依赖注入
+        use app\Request;
+        public function index(Request $request)
+        {
+           dump($request->param());
+           dump($request->param('name'));
+           dump($request->param('age', 1, "intval"));
+           $request->isPost();
+           $request->isGet();
+           $request->isAjax();
+        }
+    3.dump(input("name"));
+    4.dump(request()->param('name'));
+    5.use think\facade\Request as requestFace;
+        dump(requestFace::param("name"));
